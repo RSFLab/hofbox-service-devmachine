@@ -1,0 +1,38 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "",
+    "public": false,
+    "documentation": "",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [
+	{
+      "url": "hofbox-ollama",
+      "org": "$HZN_ORG_ID",
+      "VERSION": "0.1.29",
+      "arch": "$ARCH"
+    }
+  ],
+    "userInput": [
+        {
+            "name": "OLLAMA_BASE_URLS",
+            "label": "",
+            "type": "string",
+            "defaultValue": "http://hofbox-ollama:11434"
+        }
+    ],
+    "deployment": {
+        "services": {
+            "hofbox-ollama-open-webui": {
+                "image": "${DOCKER_IMAGE_BASE}:$SERVICE_VERSION",
+                "privileged": false,
+                "network": "",
+                "ports": [{"HostPort":"9091:8080/tcp","HostIP":"0.0.0.0"}],
+                "secrets": {}
+            }
+        }
+    }
+}

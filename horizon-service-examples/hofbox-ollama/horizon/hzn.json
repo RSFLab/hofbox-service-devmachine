@@ -1,0 +1,8 @@
+{
+    "HZN_ORG_ID": "RSFLAB",
+    "MetadataVars": {
+        "DOCKER_IMAGE_BASE": "fkuntke/ollama",
+        "SERVICE_NAME": "hofbox-ollama",
+        "SERVICE_VERSION": "0.1.29"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "HZN_ORG_ID": "RSFLAB",
+    "MetadataVars": {
+        "DOCKER_IMAGE_BASE": "fkuntke/ollama-open-webui",
+        "SERVICE_NAME": "hofbox-ollama-open-webui",
+        "SERVICE_VERSION": "0.1.114"
+    }
+}
