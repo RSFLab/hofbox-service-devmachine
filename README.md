@@ -1,17 +1,31 @@
-# HofBox OpenHorizon Dev(Virtual)Machine
+# HofBox OpenHorizon Development Machine
 
 Dieses Repository stellt ein [Vagrant](https://developer.hashicorp.com/vagrant)-basiertes Setup bereit um schnell OpenHorizon Services zu entwickeln oder zu testen.
 
 **Inhalt:**
 
-[TOC]
+- [HofBox OpenHorizon Development Machine](#hofbox-openhorizon-development-machine)
+- [Schnellstart mit einem Test-Service](#schnellstart-mit-einem-test-service)
+- [Allgemeines zur HofBox](#allgemeines-zur-hofbox)
+- [Beispiel-Services](#beispiel-services)
+- [Beispiel-Kommandos für den Umgang mit Open Horizon](#beispiel-kommandos-für-den-umgang-mit-open-horizon)
+  * [Open Horizon Exchange Commands](#open-horizon-exchange-commands)
+  * [Open Horizon Exchange System Org Commands](#open-horizon-exchange-system-org-commands)
+  * [Open Horizon Hub Admin Commands](#open-horizon-hub-admin-commands)
+  * [Management vom Exchange](#management-vom-exchange)
+  * [Entwicklung neuer Services](#entwicklung-neuer-services)
+  * [Umgang mit Properties](#umgang-mit-properties)
 
-# Schnellstart mit einem Test-Service:
+# Schnellstart mit einem Test-Service
 
-VM erstellen und einloggen:
+VM erstellen inkl. Ausführen des Bootstrap-Skriptes:
 ```
-vagrant up   # VM starten und bootstrap.sh durchlaufen lassen
-vagrant ssh  # in VM einwählen
+vagrant up
+```
+
+In die laufende VM mittels SSH einloggen:
+```
+vagrant ssh 
 ```
 
 Beispiel-Service "ollama" am internen Horizon Exchange registrieren:
@@ -32,7 +46,7 @@ Nun sollten die beiden Container (hofbox-ollama & hofbox-ollama-open-webui) lauf
 docker ps
 ```
 
-Die Weboberfläche von hofbox-ollama-open-webui lässt sich nun mittels IP-Adresse (siehe `ip a`) und Port 9091 aufrufen. Der erste Nutzer, der sich registriert ist automatisch der Admin-Account.
+Die Weboberfläche von hofbox-ollama-open-webui lässt sich nun mittels IP-Adresse (siehe `ip a`) und Port 9091 von dem Host-System aufrufen. Der erste Nutzer, der sich registriert ist automatisch der Admin-Account.
 
 
 # Allgemeines zur HofBox
@@ -114,7 +128,7 @@ hzn mms -o IBM -u "$HZN_ORG_ID/$HZN_EXCHANGE_USER_AUTH" object list -d -t agent_
 ```
 
 
-## Open Horizon Exchange System Org Commands:
+## Open Horizon Exchange System Org Commands
 
 Umgebungsvariablen mit den Zugangsdaten setzen:
 ```
@@ -143,7 +157,7 @@ hzn exchange agbot listpattern agbot
 ```
 
 
-## Open Horizon Hub Admin Commands:
+## Open Horizon Hub Admin Commands
 
 Siehe auch:
 * [Open Horizon Exchange Server and REST API (Open Horizon Docs)](https://open-horizon.github.io/docs/exchange-api/README/)
